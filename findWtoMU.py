@@ -19,8 +19,8 @@ c1 = TCanvas()
 for counter, event in enumerate(BOOM):
 	for counter, particle in enumerate(event.Gen_motherpdg_id):
 		# particle
-		if abs(int(particle)) == 24 and abs(int(event.Gen_pdg_id[counter])) == 13:
-			print particle, event.Gen_pdg_id[counter]
+		if abs(int(particle)) == 24 and abs(int(event.Gen_pdg_id[counter]))  == 13 and event.Gen_status[counter] == 1.0:
+			print particle, event.Gen_pdg_id[counter], event.Gen_status[counter]
 			TH1F_MuonFromW_eta.Fill(event.Gen_eta[counter])
 		#for counter, particle in enumerate(event.Gen_motherpdg_id):
 
